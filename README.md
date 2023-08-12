@@ -185,7 +185,7 @@ create table customer (
     customer_name varchar(255),
     city_id int,
     customer_address varchar(255),
-    next_call_data date,
+    next_call_date date,
     ts_inserted datetime null,
     primary key (id)
 );
