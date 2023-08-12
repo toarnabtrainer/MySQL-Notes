@@ -147,6 +147,99 @@ select * from loan;
 ![image](https://github.com/toarnabtrainer/PTS_Databases/assets/111301975/bed1eaaf-b549-4f12-a092-6270f8657b1e)
 
 <pre>
+create database if not exists erd2Database;
+use erd2Database;
+
+-- creating all database table
+-- create table for country
+create table country (
+	id int auto_increment,
+    country_name varchar(128),
+    country_name_eng varchar(128),
+    country_code varchar(8),
+    primary key(id)
+);
+
+-- create table for city (Here long is a keywork is MySQL, so using
+-- longitude and latitude in place of long and lat
+create table city (
+	id int auto_increment,
+    city_name varchar(128),
+    longitude decimal(9,6),
+    latitude decimal(9,6),
+    country_id int,
+    primary key (id)
+);
+
+-- create table for employee
+create table employee (
+	id int auto_increment,
+    first_name varchar(255),
+    last_name varchar(255),
+    primary key (id)
+);
+
+-- create table for customer
+create table customer (
+	id int auto_increment,
+    customer_name varchar(255),
+    city_id int,
+    customer_address varchar(255),
+    next_call_data date,
+    ts_inserted datetime null,
+    primary key (id)
+);
+
+-- create table for call_table (call is a reserved word in MySQL, 
+-- so giving the table name as call_table
+create table call_table (
+	id int auto_increment,
+    employee_id int,
+    customer_id int,
+    start_time datetime,
+    end_time datetime null,
+    call_outcome_id int null,
+    primary key (id)
+);
+
+-- create table for call_outcome
+create table call_outcome (
+	id int auto_increment,
+    outcome_text varchar(128),
+    primary key (id)
+);
+
+-- now adding foreign key constraints
+-- add country id as foreign key in city table
+alter table city
+add constraint city_country
+foreign key (country_id)
+references country(id);
+
+-- add call_outcome_id as foreign key in call_table
+alter table call_table
+add constraint call_call_outcome
+foreign key (call_outcome_id)
+references call_outcome(id);
+
+-- add customer_id as foreign key in call_table
+alter table call_table
+add constraint call_customer
+foreign key (customer_id)
+references customer(id);
+
+-- add employee_id as foreign key in call_table
+alter table call_table
+add constraint call_employee
+foreign key (employee_id)
+references employee(id);
+
+-- add city_id as foreign key in customer
+alter table customer
+add constraint customer_city
+foreign key (city_id)
+references city(id);
+
 -- Insert into country
 TRUNCATE TABLE country;
 INSERT INTO country (country_name, country_name_eng, country_code) VALUES ('Deutschland', 'Germany', 'DEU');
