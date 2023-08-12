@@ -208,8 +208,21 @@ INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_out
 INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_outcome_id) VALUES (2, 2, '2020-01-11 09:50:12', '2020-01-11 09:55:35', 2);
 SELECT * FROM call_table;
 EXPLAIN call_table;
+
+ALTER TABLE city DROP CONSTRAINT city_country;
+ALTER TABLE call_table DROP CONSTRAINT call_call_outcome;
+ALTER TABLE call_table DROP CONSTRAINT call_customer;
+ALTER TABLE call_table DROP CONSTRAINT call_employee;
+ALTER TABLE customer DROP CONSTRAINT customer_city;
+
+DROP TABLE IF EXISTS call_table;
+DROP TABLE IF EXISTS call_outcome;
+DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS city;
+DROP TABLE IF EXISTS country;
+
+DROP DATAABASE IF EXISTS erd2DB;
 </pre>
 
 ![image](https://github.com/toarnabtrainer/PTS_Databases/assets/111301975/f13555a1-bd32-48cd-8611-9c874fe0c0b1)
-
-
