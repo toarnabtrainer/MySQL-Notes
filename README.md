@@ -241,7 +241,7 @@ foreign key (city_id)
 references city(id);
 
 -- Insert into country
-TRUNCATE TABLE country;
+-- TRUNCATE TABLE country;
 INSERT INTO country (country_name, country_name_eng, country_code) VALUES ('Deutschland', 'Germany', 'DEU');
 INSERT INTO country (country_name, country_name_eng, country_code) VALUES ('Srbija', 'Serbia', 'SRB');
 INSERT INTO country (country_name, country_name_eng, country_code) VALUES ('Hrvatska', 'Croatia', 'HRV');
@@ -251,7 +251,7 @@ SELECT * FROM country;
 EXPLAIN country;
 
 -- Insert into city
-TRUNCATE TABLE city;
+-- TRUNCATE TABLE city;
 INSERT INTO city (city_name, latitude, longitude, country_id) VALUES ('Berlin', 52.520008, 13.404954, 1);
 INSERT INTO city (city_name, latitude, longitude, country_id) VALUES ('Belgrade', 44.787197, 20.457273, 2);
 INSERT INTO city (city_name, latitude, longitude, country_id) VALUES ('Zagreb', 45.815399, 15.966568, 3);
@@ -262,7 +262,7 @@ SELECT * FROM city;
 EXPLAIN city;
 
 -- Insert into call_outcome
-TRUNCATE TABLE call_outcome;
+-- TRUNCATE TABLE call_outcome;
 INSERT INTO call_outcome (outcome_text) VALUES ('call started');
 INSERT INTO call_outcome (outcome_text) VALUES ('finished - successfully');
 INSERT INTO call_outcome (outcome_text) VALUES ('finished - unsuccessfully');
@@ -270,7 +270,7 @@ SELECT * FROM call_outcome;
 EXPLAIN call_outcome;
 	
 -- Insert into employee
-TRUNCATE TABLE employee;
+-- TRUNCATE TABLE employee;
 INSERT INTO employee (first_name, last_name)
 VALUES ('Thomas (Neo)', 'Anderson');
 INSERT INTO employee (first_name, last_name)
@@ -279,7 +279,7 @@ SELECT * FROM employee;
 EXPLAIN employee;
 
 -- Insert into customer
-TRUNCATE TABLE customer;
+-- TRUNCATE TABLE customer;
 INSERT INTO customer (customer_name, city_id, customer_address, next_call_date, ts_inserted) VALUES ('Jewelry Store', 4, 'Long Street 120', '2020-01-21', '2020-01-09 14:01:20');
 INSERT INTO customer (customer_name, city_id, customer_address, next_call_date, ts_inserted) VALUES ('Bakery', 1, 'Kurfürstendamm 25', '2020-02-21', '2020-01-09 17:52:15');
 INSERT INTO customer (customer_name, city_id, customer_address, next_call_date, ts_inserted) VALUES ('Café', 1, 'Tauentzienstraße 44', '2020-01-21', '2020-01-10 08:02:49');
@@ -288,7 +288,7 @@ SELECT * FROM customer;
 EXPLAIN customer;
 
 -- Insert into call_table
-TRUNCATE TABLE call_table;
+-- TRUNCATE TABLE call_table;
 INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_outcome_id) VALUES (1, 4, '2020-01-11 09:00:15', '2020-01-11 09:12:22', 2);
 INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_outcome_id) VALUES (1, 2, '2020-01-11 09:14:50', '2020-01-11 09:20:01', 2);
 INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_outcome_id) VALUES (2, 3, '2020-01-11 09:02:20', '2020-01-11 09:18:05', 3);
