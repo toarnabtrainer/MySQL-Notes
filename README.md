@@ -153,7 +153,7 @@ use erd2Database;
 -- creating all database table
 -- create table for country
 create table country (
-	id int auto_increment,
+    id int auto_increment,
     country_name varchar(128),
     country_name_eng varchar(128),
     country_code varchar(8),
@@ -163,7 +163,7 @@ create table country (
 -- create table for city (Here long is a keywork is MySQL, so using
 -- longitude and latitude in place of long and lat
 create table city (
-	id int auto_increment,
+    id int auto_increment,
     city_name varchar(128),
     longitude decimal(9,6),
     latitude decimal(9,6),
@@ -173,7 +173,7 @@ create table city (
 
 -- create table for employee
 create table employee (
-	id int auto_increment,
+    id int auto_increment,
     first_name varchar(255),
     last_name varchar(255),
     primary key (id)
@@ -181,7 +181,7 @@ create table employee (
 
 -- create table for customer
 create table customer (
-	id int auto_increment,
+    id int auto_increment,
     customer_name varchar(255),
     city_id int,
     customer_address varchar(255),
@@ -193,7 +193,7 @@ create table customer (
 -- create table for call_table (call is a reserved word in MySQL, 
 -- so giving the table name as call_table
 create table call_table (
-	id int auto_increment,
+    id int auto_increment,
     employee_id int,
     customer_id int,
     start_time datetime,
@@ -204,7 +204,7 @@ create table call_table (
 
 -- create table for call_outcome
 create table call_outcome (
-	id int auto_increment,
+    id int auto_increment,
     outcome_text varchar(128),
     primary key (id)
 );
