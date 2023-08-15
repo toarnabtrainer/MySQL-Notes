@@ -140,7 +140,7 @@ select * from depositor;
 select * from loan;
 </pre>
 
-* **Demonstration of Queries in that Chapter**
+* **Demonstration of Queries of that Chapter**
 
 <pre>
 -- All the schemas:
