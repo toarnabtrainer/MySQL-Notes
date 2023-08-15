@@ -1,5 +1,5 @@
 ## Korth Chapter - 4 (Used Sample Database and Tables)<br>
-![image](https://github.com/toarnabtrainer/MySQL_Notes/assets/111301975/80d28867-563f-4258-838f-fa0da5a91340)
+![image](https://github.com/toarnabtrainer/MySQL_Notes/assets/111301975/d06daab7-d701-4ea6-a4ae-19cda117dd87)
 
 <pre>
 *********************************************
