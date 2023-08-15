@@ -50,11 +50,16 @@ create table customer (
 	customer_street varchar(20),
 	customer_city varchar(20)
 );
+</pre>
 
--- insert all the records to the tables from the corresponding csv files
+<br>
 
+* **Insert all the records to the tables from the corresponding CSV files**
+* **Directory Path:** E:\Arnab Docs\MySQL\Korth CSV
+
+<pre>
 -- or execute following queries
-truncate table account;
+-- truncate table account;
 insert into account values ('A-101','Downtown',500);
 insert into account values ('A-102','Perryridge',400);
 insert into account values ('A-201','Brighton',900);
@@ -65,7 +70,7 @@ insert into account values ('A-305','Round Hill',350);
 select * from account;
 explain account;
 
-truncate table borrower;
+-- truncate table borrower;
 insert into borrower values ('Adams','L-16');
 insert into borrower values ('Curry','L-93');
 insert into borrower values ('Hayes','L-15');
@@ -77,7 +82,7 @@ insert into borrower values ('Williams','L-17');
 select * from borrower;
 explain borrower;
 
-truncate table branch;
+-- truncate table branch;
 insert into branch values ('Brighton','Brooklyn',7100000);
 insert into branch values ('Downtown','Brooklyn',9000000);
 insert into branch values ('Mianus','Horseneck',400000);
@@ -89,7 +94,7 @@ insert into branch values ('Round Hill','Horseneck',8000000);
 select * from branch;
 explain branch;
 
-truncate table customer;
+-- truncate table customer;
 insert into customer values ('Adams','Spring','Pittsfield');
 insert into customer values ('Brooks','Senator','Brooklyn');
 insert into customer values ('Curry','North','Rye');
@@ -105,7 +110,7 @@ insert into customer values ('Williams','Nassau','Princeton');
 select * from customer;
 explain customer;
 
-truncate table depositor;
+-- truncate table depositor;
 insert into depositor values ('Hayes','A-102');
 insert into depositor values ('Johnson','A-101');
 insert into depositor values ('Johnson','A-201');
@@ -116,7 +121,7 @@ insert into depositor values ('Turner','A-305');
 select * from depositor;
 explain depositor;
 
-truncate table loan;
+-- truncate table loan;
 insert into loan values ('L-11','Round Hill',900);
 insert into loan values ('L-14','Downtown',1500);
 insert into loan values ('L-15','Perryridge',1500);
