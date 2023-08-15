@@ -8,10 +8,11 @@
 * **MySQL Server and Workbench Download and Install YouTube Video -** https://www.youtube.com/watch?v=GwHpIl0vqY4
 
 * **PTR Trainng Topic Coverage:**
-  * **Day-1:** "Database Management System" PPT (Slides 1 to 32 RDBMS Part) + Database and Table Creation and Record Entry Demo
-  * **Day-2:** CSV Import Demo + Korth Chapter-4 Queries execution (Part-1)
-  * **Day-3:** Korth Chapter-4 Queries execution (Part-2)
-  * **Day-4:** "Database Management System" PPT (Slides 33 to 43 NoSQL Part)
+  * **Day-1:** "Database Management System" PPT (Slides 1 to 32 RDBMS Part) + Sample Database and Table Creations and Record Entry Demo
+  * **Day-2:** CSV Import Demo + Korth Chapter-4 Queries Execution (Part-1: Before View Creation)
+  * **Day-3:** Korth Chapter-4 Queries Execution (Part-2: View Creation Onwards) + Database Join Examples + Korth Excercise 4.2 Queries Assignment
+  * **Day-4:** "Database Management System" PPT (Slides 33 to 43 NoSQL Part) + Korth Excercise 4.2 Queries Solutions + MS-SQL Server Example - ERD to Database (Both Forward and Reverse Engineering) + Query Optimization from TOTSL Note PDF
+    
 <br>
 
 SET SQL_SAFE_UPDATES = 0;
