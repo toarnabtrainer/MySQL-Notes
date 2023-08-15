@@ -7,6 +7,11 @@
 * **MySql Tutorial Site -** https://www.mysqltutorial.org/
 * **MySQL Server and Workbench Download and Install YouTube Video -** https://www.youtube.com/watch?v=GwHpIl0vqY4
 
+* **PTR Trainng Topic Coverage:**
+  * **Day-1:** "Database Management System" PPT (Slides 1 to 32 RDBMS Part) + Database and Table Creation and Record Entry Demo
+  * **Day-2:**
+  * **Day-3:**
+  * **Day-4:** "Database Management System" PPT (Slides 33 to 43 NoSQL Part)
 <br>
 
 ## Korth Chapter - 4 (Used Sample Database and Tables)<br>
