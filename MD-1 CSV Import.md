@@ -1,4 +1,4 @@
-## Fetching data to Database Tables from CSV Files
+# Fetching data to Database Tables from CSV Files
 
 <pre>
 -- to drop if the database pre-exists
