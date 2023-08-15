@@ -1,6 +1,6 @@
 # PTS_Databases
 
-* **GitHub Link: https -** https://github.com/toarnabtrainer/PTS_Databases
+* **GitHub Link: https -** https://github.com/toarnabtrainer/MySQL-Notes
 * **GitHub Shortened Link -** https://tinyurl.com/2btenujh
 * **Notepad.pw Link -** https://tinyurl.com/24rkwnxf
 * **MySql Official Site -** https://www.mysql.com/
