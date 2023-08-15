@@ -9,10 +9,12 @@
 
 * **PTR Trainng Topic Coverage:**
   * **Day-1:** "Database Management System" PPT (Slides 1 to 32 RDBMS Part) + Database and Table Creation and Record Entry Demo
-  * **Day-2:** CSV Import Demo + 
-  * **Day-3:**
+  * **Day-2:** CSV Import Demo + Korth Chapter-4 Queries execution (Part-1)
+  * **Day-3:** Korth Chapter-4 Queries execution (Part-2)
   * **Day-4:** "Database Management System" PPT (Slides 33 to 43 NoSQL Part)
 <br>
+
+SET SQL_SAFE_UPDATES = 0;
 
 ## Korth Chapter - 4 (Used Sample Database and Tables)<br>
 
