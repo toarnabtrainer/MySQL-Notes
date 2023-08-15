@@ -1,4 +1,4 @@
-## Korth Chapter - 4 (Used Sample Database and Tables)<br>
+# Korth Chapter - 4 (Used Sample Database and Tables)<br>
 
 ![image](https://github.com/toarnabtrainer/MySQL_Notes/assets/111301975/836b9aaf-c21c-4cbd-bf12-05be5347dd81)
 
