@@ -1,4 +1,4 @@
-# PTS_Databases
+# MySQL Notes
 
 * **GitHub Link: https -** https://github.com/toarnabtrainer/MySQL-Notes
 * **GitHub Shortened Link -** https://tinyurl.com/2btenujh
