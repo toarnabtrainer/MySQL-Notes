@@ -5,12 +5,14 @@ CREATE DATABASE IF NOT EXISTS joinDB;
 
 USE joinDB;
 
+-- create department table
 CREATE TABLE department (
   deptno INT, 
   dname VARCHAR(15), 
   loc VARCHAR(10)
 );
 
+-- inserting records to department table
 INSERT INTO department VALUES (10,'Inventory','Hyderabad');
 INSERT INTO department VALUES (20,'Finance','Bangalore');
 INSERT INTO department VALUES (30,'HR','Mumbai');
