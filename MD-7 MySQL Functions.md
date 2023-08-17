@@ -214,7 +214,7 @@ SELECT rtrim("    university   ") AS trim_university, LENGTH(rtrim("    universi
 SELECT ltrim("    university   ") AS trim_university, LENGTH(ltrim("    university   "));
 </pre>
 
-* **Extra Query:"**
+* **Extra Query:**
 <pre>
 SELECT * FROM call_outcome;
 UPDATE call_outcome
@@ -241,10 +241,16 @@ SELECT SQRT(100);
 </pre>
 
 ### Date Functions
-* **Query: Extract year from start time of calls:**
+* **Query: Extract year, month and day from a date:**
 <pre>
-SELECT YEAR(start_time) 
+SELECT start_time, YEAR(start_time), MONTH(start_time), DAY(start_time)
 FROM call_table;
+</pre>
+
+* **Query: Extract hour, minute and second from a datetime:**
+<pre>
+SELECT start_time, HOUR(start_time), MINUTE(start_time), SECOND(start_time)
+FROM call_table	  
 </pre>
 
 * **Query: Get current date:**
@@ -258,23 +264,6 @@ EXCLUSIVE DATE_ADD(next_call_date, INTERVAL 1 DAY)
 FROM customer;
 </pre>
 
-* **Extra Query:**
-<pre>
-SELECT start_time, HOUR(start_time), MINUTE(start_time), SECOND(start_time)
-FROM call_table	  
-</pre>
-
-### Null Functions [Null values required to test]
-* **Query: Replace NULLs with default value:**
-<pre>
-SELECT * FROM call_outcome;
-INSERT INTO call_outcome(id) VALUES(4);
-SELECT * FROM call_outcome;
-SELECT COUNT(id), COUNT(outcome_text) FROM call_outcome;
-SELECT id, outcome_text, IFNULL(outcome_text, "In process") FROM call_outcome;
-</pre>
-
-### Date Functions
 * **Query: Get current timestamp:**
 <pre>
 SELECT NOW();
@@ -292,10 +281,14 @@ SELECT DATEDIFF(next_call_date, ts_inserted)
 FROM customer;
 </pre>
 
-* **Query: Extract year, month and day from a date:**
+### Null Functions [Null values required to test]
+* **Query: Replace NULLs with default value:**
 <pre>
-select start_time, year(start_time), month(start_time), day(start_time)
-from call_table;
+SELECT * FROM call_outcome;
+INSERT INTO call_outcome(id) VALUES(4);
+SELECT * FROM call_outcome;
+SELECT COUNT(id), COUNT(outcome_text) FROM call_outcome;
+SELECT id, outcome_text, IFNULL(outcome_text, "In process") FROM call_outcome;
 </pre>
 
 ### CASE Clauses:
