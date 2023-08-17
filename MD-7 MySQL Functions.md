@@ -179,64 +179,93 @@ FROM employee;
 
 ### Numeric Functions
 * **Query: Round call duration to nearest minute:**
+<pre>
 SELECT ROUND(TIMESTAMPDIFF(MINUTE, start_time, end_time)) AS duration
 FROM call_table;
+</pre>
 
 * **Query: Generate random number between 0 and 1:**
+<pre>
 SELECT RAND();
+</pre>
 
 ### Date Functions
 * **Query: Extract year from start time of calls:**
+<pre>
 SELECT YEAR(start_time) 
 FROM call_table;
+</pre>
 
 * **Query: Get current date:**
+<pre>
 SELECT CURDATE();
+</pre>
 
 * **Query: Add interval of 1 day to next call date:**
+<pre>
 SELECT DATE_ADD(next_call_date, INTERVAL 1 DAY)
 FROM customer;
+</pre>
 
 ### Null Functions [We need null values to test]
 * **Query: Find rows with NULL call outcome:**
+<pre>
 SELECT YEAR(start_time) 
 FROM call_table;
+</pre>
 
 * **Query: Count non-NULL values in column:**
+<pre>
 SELECT COUNT(comm)  
 FROM bonus;
+</pre>
 
 * **Query: Replace NULLs with default value:**
+<pre>
 SELECT IFNULL(comm, 0)  
 FROM bonus;
+</pre>
 
 ### String Functions
 * **Query: Find length of customer address:**
+<pre>
 SELECT LENGTH(customer_address) 
 FROM customer;
+</pre>
 
 * **Query: Uppercase country name:**
+<pre>
 SELECT UPPER(country_name)
 FROM country;
+</pre>
 
 * **Query: Find index of first space in name:**
+<pre>
 SELECT INSTR(first_name, ' ')
 FROM employee;
+</pre>
 
 ### Date Functions
 * **Query: Get current timestamp:**
+<pre>
 SELECT NOW();
+</pre>
 
 * **Query: Convert to date only from datetime:**
+<pre>
 SELECT DATE(start_time)
 FROM call_table;
+</pre>
 
 * **Query: Difference between two dates:**
+<pre>
 SELECT DATEDIFF(next_call_date, ts_inserted) 
 FROM customer;
+</pre>
 
 ### CASE Clauses:
 * **Application 1: Simple CASE Expression:**
+<pre>
 SELECT 
   customer_id,
   CASE call_outcome_id
@@ -245,6 +274,7 @@ SELECT
     WHEN 3 THEN 'Finished Unsuccessfully'
   END AS call_status
 FROM call_table;
+</pre>
 
 * **Application 2: Searched CASE Statement:**
 <pre>
@@ -283,6 +313,7 @@ ORDER BY
 </pre>
 
 <hr>
+
 <pre>
 -- drop all foreig key constraints
 ALTER TABLE city DROP CONSTRAINT city_country;
