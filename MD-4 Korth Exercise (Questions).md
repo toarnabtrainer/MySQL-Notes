@@ -23,7 +23,7 @@ CREATE TABLE employee (
 INSERT INTO employee VALUES ('ashoke','vip','cal');
 INSERT INTO employee VALUES ('sanjay','gt','mum');
 INSERT INTO employee VALUES ('rakesh','bt','cal');
-INSERT INTO employee VALUES ('dilip','vip','cal'); 
+INSERT INTO employee VALUES ('dilip','vip','cal');
 INSERT INTO employee VALUES ('manoj','gt','del');
 INSERT INTO employee VALUES ('pranab','vip','cal');
 INSERT INTO employee VALUES ('salim','vip','del');
