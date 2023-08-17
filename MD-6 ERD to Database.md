@@ -152,6 +152,14 @@ INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_out
 SELECT * FROM call_table;
 EXPLAIN call_table;
 
+-- display records
+SELECT * FROM call_table;
+SELECT * FROM call_outcome;
+SELECT * FROM customer;
+SELECT * FROM employee;
+SELECT * FROM city;
+SELECT * FROM country;
+
 -- drop all foreig key constraints
 ALTER TABLE city DROP CONSTRAINT city_country;
 ALTER TABLE call_table DROP CONSTRAINT call_call_outcome;
