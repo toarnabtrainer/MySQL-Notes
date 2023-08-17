@@ -152,6 +152,7 @@ INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_out
 SELECT * FROM call_table;
 EXPLAIN call_table;
 
+-- display records
 SELECT * FROM call_table;
 SELECT * FROM call_outcome;
 SELECT * FROM customer;
@@ -166,15 +167,17 @@ SELECT * FROM country;
 ### Text Functions
 * **Query: Find customers whose name starts with 'J':**
 <pre>
-SELECT *
-FROM customer
+SELECT * FROM customer
 WHERE LEFT(customer_name, 1) = 'J';
+	
+-- using wild-card characters
+SELECT * FROM customer
+WHERE customer_name LIKE "j%";
 </pre>
 
 * **Query: Find call outcomes containing 'finished':**
 <pre>
-SELECT *
-FROM call_outcome
+SELECT * FROM call_outcome
 WHERE outcome_text LIKE '%finished%';
 </pre>
 
@@ -183,6 +186,37 @@ WHERE outcome_text LIKE '%finished%';
 SELECT CONCAT(first_name, ' ', last_name) AS full_name
 FROM employee;
 </pre>
+
+* **Query: Find length of customer address:**
+<pre>
+SELECT LENGTH(customer_address) 
+FROM customer;
+</pre>
+
+* **Query: Uppercase and Lowercase country name:**
+<pre>
+SELECT UPPER(country_name), LOWER(country_name)
+FROM country;
+</pre>
+
+* **Query: Find index of first space in name:**
+<pre>
+SELECT INSTR(first_name, ' ')
+FROM employee;
+
+SELECT customer_address, INSTR(customer_address, " ") FROM customer;
+</pre>
+
+* **Query: Eliminating redundant sapces from a string:**
+SELECT trim("    university   ") AS trim_university, LENGTH(trim("    university   "));
+SELECT rtrim("    university   ") AS trim_university, LENGTH(rtrim("    university   "));
+SELECT ltrim("    university   ") AS trim_university, LENGTH(ltrim("    university   "));
+
+* **Extra Query"**
+SELECT * FROM call_outcome;
+UPDATE call_outcome
+SET outcome_text = CONCAT(UPPER(LEFT(outcome_text, 1)), LOWER(RIGHT(outcome_text, LENGTH(outcome_text) - 1)));
+SELECT * FROM call_outcome;
 
 ### Numeric Functions
 * **Query: Round call duration to nearest minute:**
@@ -231,25 +265,6 @@ FROM bonus;
 <pre>
 SELECT IFNULL(comm, 0)  
 FROM bonus;
-</pre>
-
-### String Functions
-* **Query: Find length of customer address:**
-<pre>
-SELECT LENGTH(customer_address) 
-FROM customer;
-</pre>
-
-* **Query: Uppercase country name:**
-<pre>
-SELECT UPPER(country_name)
-FROM country;
-</pre>
-
-* **Query: Find index of first space in name:**
-<pre>
-SELECT INSTR(first_name, ' ')
-FROM employee;
 </pre>
 
 ### Date Functions
