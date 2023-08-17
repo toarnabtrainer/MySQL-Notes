@@ -3,15 +3,16 @@
 * **GitHub Link: https -** https://github.com/toarnabtrainer/MySQL-Notes
 * **GitHub Shortened Link -** https://tinyurl.com/2btenujh
 * **Notepad.pw Link -** https://tinyurl.com/24rkwnxf
-* **MySql Official Site -** https://www.mysql.com/
-* **MySql Tutorial Site -** https://www.mysqltutorial.org/
+* **MySQL Official Site -** https://www.mysql.com/
+* **MySQL Tutorial Site -** https://www.mysqltutorial.org/
 * **MySQL Server and Workbench Download and Install YouTube Video -** https://www.youtube.com/watch?v=GwHpIl0vqY4
 
 * **PTR Trainng Topic Coverage:**
   * **Day-1:** "Database Management System" PPT (Slides 1 to 32 RDBMS Part) + Sample Database and Table Creations and Record Entry Demo
   * **Day-2:** CSV Import Demo + Korth Chapter-4 Queries Execution (Part-1: Before View Creation)
   * **Day-3:** Korth Chapter-4 Queries Execution (Part-2: View Creation Onwards) + Database Join Examples + Korth Excercise 4.2 Queries Assignment
-  * **Day-4:** "Database Management System" PPT (Slides 33 to 43 NoSQL Part) + Korth Excercise 4.2 Queries Solutions + MS-SQL Server Example - ERD to Database (Both Forward and Reverse Engineering) + Query Optimization from TOTSOL PDF Note
+  * **Day-4:** "Database Management System" PPT (Slides 33 to 43 NoSQL Part) + Korth Excercise 4.2 Queries Solutions + MS-SQL Server Example - ERD to Database (Both Forward and Reverse Engineering) + MySQL Different Inbuilt Query Functions + Query Optimization from TOTSOL PDF Note
+  * **Misc:** EMP-SALGRADE-BONUS-DEPT Query Examples
     
 <br>
 
