@@ -151,6 +151,13 @@ INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_out
 INSERT INTO call_table (employee_id, customer_id, start_time, end_time, call_outcome_id) VALUES (2, 2, '2020-01-11 09:50:12', '2020-01-11 09:55:35', 2);
 SELECT * FROM call_table;
 EXPLAIN call_table;
+
+SELECT * FROM call_table;
+SELECT * FROM call_outcome;
+SELECT * FROM customer;
+SELECT * FROM employee;
+SELECT * FROM city;
+SELECT * FROM country;
 </pre>
 
 <hr>
