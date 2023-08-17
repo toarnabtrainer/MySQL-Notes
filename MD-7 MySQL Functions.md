@@ -208,15 +208,19 @@ SELECT customer_address, INSTR(customer_address, " ") FROM customer;
 </pre>
 
 * **Query: Eliminating redundant sapces from a string:**
+<pre>
 SELECT trim("    university   ") AS trim_university, LENGTH(trim("    university   "));
 SELECT rtrim("    university   ") AS trim_university, LENGTH(rtrim("    university   "));
 SELECT ltrim("    university   ") AS trim_university, LENGTH(ltrim("    university   "));
+</pre>
 
-* **Extra Query"**
+* **Extra Query:"**
+<pre>
 SELECT * FROM call_outcome;
 UPDATE call_outcome
 SET outcome_text = CONCAT(UPPER(LEFT(outcome_text, 1)), LOWER(RIGHT(outcome_text, LENGTH(outcome_text) - 1)));
 SELECT * FROM call_outcome;
+</pre>
 
 ### Numeric Functions
 * **Query: Round call duration to nearest minute:**
@@ -228,6 +232,12 @@ FROM call_table;
 * **Query: Generate random number between 0 and 1:**
 <pre>
 SELECT RAND();
+</pre>
+
+* **Extra Query:**
+<pre>
+SELECT ROUND(10.1), ROUND(10.5), ROUND(10.9);
+SELECT SQRT(100);
 </pre>
 
 ### Date Functions
@@ -244,27 +254,24 @@ SELECT CURDATE();
 
 * **Query: Add interval of 1 day to next call date:**
 <pre>
-SELECT DATE_ADD(next_call_date, INTERVAL 1 DAY)
+EXCLUSIVE DATE_ADD(next_call_date, INTERVAL 1 DAY)
 FROM customer;
 </pre>
 
-### Null Functions [We need null values to test]
-* **Query: Find rows with NULL call outcome:**
+* **Extra Query:**
 <pre>
-SELECT YEAR(start_time) 
-FROM call_table;
+SELECT start_time, HOUR(start_time), MINUTE(start_time), SECOND(start_time)
+FROM call_table	  
 </pre>
 
-* **Query: Count non-NULL values in column:**
-<pre>
-SELECT COUNT(comm)  
-FROM bonus;
-</pre>
-
+### Null Functions [Null values required to test]
 * **Query: Replace NULLs with default value:**
 <pre>
-SELECT IFNULL(comm, 0)  
-FROM bonus;
+SELECT * FROM call_outcome;
+INSERT INTO call_outcome(id) VALUES(4);
+SELECT * FROM call_outcome;
+SELECT COUNT(id), COUNT(outcome_text) FROM call_outcome;
+SELECT id, outcome_text, IFNULL(outcome_text, "In process") FROM call_outcome;
 </pre>
 
 ### Date Functions
@@ -275,7 +282,7 @@ SELECT NOW();
 
 * **Query: Convert to date only from datetime:**
 <pre>
-SELECT DATE(start_time)
+SELECT start_time, DATE(start_time)
 FROM call_table;
 </pre>
 
@@ -283,6 +290,12 @@ FROM call_table;
 <pre>
 SELECT DATEDIFF(next_call_date, ts_inserted) 
 FROM customer;
+</pre>
+
+* **Query: Extract year, month and day from a date:**
+<pre>
+select start_time, year(start_time), month(start_time), day(start_time)
+from call_table;
 </pre>
 
 ### CASE Clauses:
