@@ -119,6 +119,9 @@ EXPLAIN salgrade;
 SELECT * FROM salgrade;
 </pre>
 <hr>
+
+## Sample Queries
+<hr>
 <pre>
 -- Q1: Get the name and job of all employees:
 SELECT ename, job 
