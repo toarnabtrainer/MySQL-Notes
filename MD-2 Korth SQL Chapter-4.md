@@ -4,6 +4,7 @@
 
 
 <pre>
+------------------------------------------------- Section-1
 *********************************************
 -- Korth Chapter - 4, Page - 143
 -- All the schemas:
@@ -13,38 +14,52 @@
 -- Depositor(account_number, customer_name)
 -- Borrower(customer_name, loan_number)
 -- Loan(loan_number, amount, branch_name)
-
+</pre>
+<hr>
+<pre>
 create database korth;
 use korth;
-
+</pre>
+<hr>
+<pre>
 create table depositor (
 	customer_name varchar(20),
 	account_number varchar(20)
 );
-
+</pre>
+<hr>
+<pre>
 create table loan (
 	loan_number varchar(20),
 	branch_name varchar(20),
 	amount int
 );
-
+</pre>
+<hr>
+<pre>
 create table borrower (
 	customer_name varchar(20),
 	loan_number varchar(20)
 );
-
+</pre>
+<hr>
+<pre>
 create table branch (
 	branch_name varchar(20),
 	branch_city varchar(20),
 	assets int
 );
-
+</pre>
+<hr>
+<pre>
 create table account (
 	account_number varchar(20),
 	branch_name varchar(20),
 	balance int
 );
-
+</pre>
+<hr>
+<pre>
 create table customer (
 	customer_name varchar(20),
 	customer_street varchar(20),
@@ -69,7 +84,9 @@ insert into account values ('A-222','Redwood',700);
 insert into account values ('A-305','Round Hill',350);
 select * from account;
 explain account;
-
+</pre>
+<hr>
+<pre>
 -- truncate table borrower;
 insert into borrower values ('Adams','L-16');
 insert into borrower values ('Curry','L-93');
@@ -81,7 +98,9 @@ insert into borrower values ('Smith','L-23');
 insert into borrower values ('Williams','L-17');
 select * from borrower;
 explain borrower;
-
+</pre>
+<hr>
+<pre>
 -- truncate table branch;
 insert into branch values ('Brighton','Brooklyn',7100000);
 insert into branch values ('Downtown','Brooklyn',9000000);
@@ -93,7 +112,9 @@ insert into branch values ('Redwood Palo','Alto',2100000);
 insert into branch values ('Round Hill','Horseneck',8000000);
 select * from branch;
 explain branch;
-
+</pre>
+<hr>
+<pre>
 -- truncate table customer;
 insert into customer values ('Adams','Spring','Pittsfield');
 insert into customer values ('Brooks','Senator','Brooklyn');
@@ -109,7 +130,9 @@ insert into customer values ('Turner','Putnam','Stamford');
 insert into customer values ('Williams','Nassau','Princeton');
 select * from customer;
 explain customer;
-
+</pre>
+<hr>
+<pre>
 -- truncate table depositor;
 insert into depositor values ('Hayes','A-102');
 insert into depositor values ('Johnson','A-101');
@@ -120,7 +143,9 @@ insert into depositor values ('Smith','A-215');
 insert into depositor values ('Turner','A-305');
 select * from depositor;
 explain depositor;
-
+</pre>
+<hr>
+<pre>
 -- truncate table loan;
 insert into loan values ('L-11','Round Hill',900);
 insert into loan values ('L-14','Downtown',1500);
@@ -131,7 +156,9 @@ insert into loan values ('L-23','Redwood',2000);
 insert into loan values ('L-93','Mianus',500);
 select * from loan;
 explain loan;
-
+</pre>
+<hr>
+<pre>
 select * from account;
 select * from borrower;
 select * from branch;
@@ -150,14 +177,18 @@ select * from loan;
 -- Depositor(account_number, customer_name)
 -- Borrower(customer_name, loan_number)
 -- Loan(loan_number, amount, branch_name)
-
+</pre>
+<hr>
+<pre>
 -- The select Clause
 select branch_name from loan;
 select distinct branch_name from loan;
 select all branch_name from loan;  -- equivalent to query without 'all' clause
 select loan_number, branch_name, amount * 100 from loan;
 select loan_number, branch_name, amount, amount * 0.18 as gst_amount from loan;
-
+</pre>
+<hr>
+<pre>
 -- The where Clause
 select loan_number
 from loan
@@ -170,7 +201,9 @@ where amount between 900 and 1000;   -- range has been modified
 select loan_number
 from loan
 where amount >= 900 and amount <= 1000;
-
+</pre>
+<hr>
+<pre>
 -- The from Clause
 select borrower.customer_name, loan.loan_number, loan.amount
 from loan, borrower
@@ -184,12 +217,16 @@ select customer_name, loan.loan_number, amount
 from loan, borrower
 where borrower.loan_number = loan.loan_number
   and branch_name = "Perryridge";
-  
+</pre>
+<hr>
+<pre>
 -- The Rename Operation
 select customer_name, borrower.loan_number, amount   -- without renaming
 from borrower, loan
 where borrower.loan_number = loan.loan_number;
-
+</pre>
+<hr>
+<pre>
 select customer_name, borrower.loan_number as loan_id, amount   -- without renaming
 from borrower, loan
 where borrower.loan_number = loan.loan_number;
@@ -197,7 +234,9 @@ where borrower.loan_number = loan.loan_number;
 select customer_name, borrower.loan_number loan_id, amount   -- without renaming
 from borrower, loan
 where borrower.loan_number = loan.loan_number;
-
+</pre>
+<hr>
+<pre>
 -- Tuple Variables
 select customer_name, T.loan_number as loan_id, S.amount
 from borrower as T, loan as S
@@ -216,7 +255,9 @@ select *
 from branch b1, branch b2
 where b2.branch_city = "Brooklyn"
   and b1.assets > b2.assets;
-
+</pre>
+<hr>
+<pre>
 -- String Operations
 select customer_name, customer_street
 from customer
@@ -225,7 +266,9 @@ where customer_street like "%Main%";
 select customer_name, customer_street
 from customer
 where customer_street like "%ai%";
-
+</pre>
+<hr>
+<pre>
 -- Ordering the Display of Tuples
 select customer_name
 from loan, borrower
@@ -240,9 +283,13 @@ order by amount desc, loan_number asc;
 select *
 from loan
 order by branch_name asc, loan_number desc;
-
+</pre>
+<hr>
+<pre>
 -- Duplicates
-
+</pre>
+<hr>
+<pre>
 -- Set Operations
 -- The Union Operation
 (select customer_name
@@ -277,7 +324,9 @@ from depositor)
 intersect all
 (select customer_name
 from borrower);
-
+</pre>
+<hr>
+<pre>
 -- The Except Operation (Set Difference)
 (select distinct customer_name
 from depositor)
@@ -295,7 +344,9 @@ from borrower);
 (select distinct customer_name from depositor)
 except
 (select customer_name from borrower);
-
+</pre>
+<hr>
+<pre>
 -- Aggregate Functions
 select avg (balance) avg_balance
 from account
@@ -339,7 +390,9 @@ depositor.customer_name = customer.customer_name and
 customer_city = "Harrison"
 group by depositor.customer_name
 having count(distinct depositor.account_number) >= 1;
-
+</pre>
+<hr>
+<pre>
 -- Null Values
 select loan_number
 from loan
@@ -348,7 +401,9 @@ where amount is null;
 select loan_number
 from loan
 where amount is not null;
-
+</pre>
+<hr>
+<pre>
 -- Nested Subqueries
 -- Set Membership
 -- customer names having both savings and loan accounts
@@ -412,7 +467,9 @@ having avg(balance) >= all
 	(select avg(balance)
 	 from account
 	 group by branch_name);
-
+</pre>
+<hr>
+<pre>
 -- Test for Empty Relations
 select distinct customer_name
 from borrower
@@ -442,7 +499,9 @@ where not exists ((select branch_name
 		    from depositor as T, account as R
 		    where T.account_number = R.account_number and
 		          S.customer_name = T.customer_name));
-                   
+</pre>
+<hr>
+<pre>                   
 -- Views
 create view all_customer as
     (select branch_name, customer_name
@@ -457,38 +516,30 @@ select customer_name
 from all_customer
 where branch_name = "Perryridge";
 
--- Derived Relations
-create table result as
-(select branch_name as new_branch_name, avg(balance) as new_avg_balance
- from account
- group by branch_name);
-
--- drop table result;
-select * from result;
-
-------------------------------------------------- Day-2
-use korth1;
-
-select distinct S.customer_name
-from depositor as S
-where not exists ((select branch_name
-                   from branch
-		   where branch_city = "Brooklyn")
-		 except
-		  (select R.branch_name
-		   from depositor as T, account as R
-		   where T.account_number = R.account_number and
-		         S.customer_name = T.customer_name));
-                   
-(select branch_name from branch
- where branch_city = "Brooklyn");
- 
 create view branch_total_loan(branch_name, total_loan) as
 select branch_name, sum(amount)
 from loan
 group by branch_name;
 
 select * from branch_total_loan;
+</pre>
+<hr>
+<pre>
+-- Derived Relations
+create table result as
+(select branch_name as new_branch_name, avg(balance) as new_avg_balance
+ from account
+ group by branch_name);
+</pre>
+<hr>
+<pre>
+-- drop table result;
+select * from result;
+</pre>
+<hr>
+<pre>
+------------------------------------------------- Section-2
+use korth1;
 
 -- Modification of the Database
 -- Deletion
@@ -522,7 +573,10 @@ delete from account
     
 select * from account;
 select count(*) from account;
-
+</pre>
+<hr>
+<pre>
+-- insert
 insert into account
 	(select loan_number, branch_name, 200
 	 from loan
@@ -560,7 +614,9 @@ insert into account
 values ("A-401", null, 1200);
 
 select * from account;
-
+</pre>
+<hr>
+<pre>
 -- Update
 select * from account;
 update account
@@ -602,7 +658,9 @@ select * from loan;
 select * from borrower;
 select * from depositor;
 select * from account;
-
+</pre>
+<hr>
+<pre>
 -- Schema Definition in SQL
 create table branch1
 	(branch_name char(15),
@@ -640,7 +698,10 @@ insert into student values ("Kamal", "Std-002","BACHELORS");
 insert into student values ("Shyamal", "Std-003","doctorate");
 insert into student values ("Bimal", "Std-004","MCA");
 select * from student;
-
+</pre>
+<hr>
+<pre>
+-- misc. queries
 describe loan;
 alter table loan add commission int;
 explain loan;
