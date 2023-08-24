@@ -197,6 +197,12 @@ FROM emp e
 WHERE e.sal = (SELECT MAX(sal) 
                FROM emp 
                WHERE deptno = e.deptno);
+-- otherwise
+SELECT e.* 
+FROM emp e
+WHERE e.sal >= all (SELECT sal
+               FROM emp 
+               WHERE deptno = e.deptno);
 </pre>
 <hr>
 <pre>
