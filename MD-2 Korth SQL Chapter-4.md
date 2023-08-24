@@ -576,7 +576,7 @@ select count(*) from account;
 </pre>
 <hr>
 <pre>
--- insert
+-- Insert
 insert into account
 	(select loan_number, branch_name, 200
 	 from loan
@@ -701,7 +701,7 @@ select * from student;
 </pre>
 <hr>
 <pre>
--- misc. queries
+-- Misc. queries
 describe loan;
 alter table loan add commission int;
 explain loan;
