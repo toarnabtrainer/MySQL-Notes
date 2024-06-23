@@ -1,4 +1,4 @@
-# Korth Exercise 4.2 Answers
+# Korth Exercise 4.2 Questions
 
 <pre>
 CREATE DATABASE IF NOT EXISTS korthDB;
